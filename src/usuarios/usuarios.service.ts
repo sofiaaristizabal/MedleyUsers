@@ -93,7 +93,9 @@ export class UsuariosService {
      if(!isValid){
         throw new BadRequestException('Credenciales invalidas');
      }
-     return {usuario:{email}}
+     return {usuario:{
+      id:usuario.id,
+      email:usuario.email}}
    } catch(err){
     console.log(err);
     throw new BadRequestException(err.detail); 
